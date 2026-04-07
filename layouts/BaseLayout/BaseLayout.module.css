@@ -24,13 +24,13 @@
 
 .body {
   grid-area: body;
-  padding-top: 74px;
+  padding-top: 74px !important;
 
   @media screen and (min-width: 375px) {
-    padding-top: 85px;
+    padding-top: 85px !important;
   }
 
   @media screen and (min-width: 768px) {
-    padding-top: 103px;
+    padding-top: 103px !important;
   }
 }
