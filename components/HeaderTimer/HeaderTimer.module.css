@@ -1,3 +1,33 @@
+.container {
+  display: grid;
+  grid-template-columns: 14px auto 14px;
+  align-items: center;
+  width: 126px;
+  margin: 0 auto !important;
+
+  @media screen and (min-width: 375px) {
+    width: 136px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 157px;
+  }
+}
+
+.icon {
+  margin: auto !important;
+  fill: rgba(255, 187, 0, 1);
+
+  &.urgent {
+    fill: rgba(255, 78, 78, 1);
+    animation: blink 1s infinite ease-in-out;
+  }
+
+  &.noll {
+    fill: rgba(255, 255, 255, 1);
+  }
+}
+
 .box {
   background: transparent;
   display: flex;
@@ -23,6 +53,7 @@
   letter-spacing: 0%;
   transition: color 0.3s ease;
   width: 72px;
+  height: 100%;
 
   @media screen and (min-width: 375px) {
     font-size: 2rem;
@@ -33,12 +64,14 @@
     font-size: 40px;
     width: 106px;
   }
-}
 
-.timer {
   &.urgent {
     color: rgba(255, 78, 78, 1);
     animation: blink 1s infinite ease-in-out;
+  }
+
+  &.noll {
+    color: rgba(255, 255, 255, 1);
   }
 }
 

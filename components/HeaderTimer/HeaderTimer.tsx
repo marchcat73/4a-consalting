@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import cn from 'classnames';
 import { useAppStore } from '@/stores';
+import { StarIcon } from '@/assets/icons';
 import styles from './HeaderTimer.module.css';
 
 const HeaderTimer = ({ initialSeconds = 120 }) => {
@@ -32,16 +33,32 @@ const HeaderTimer = ({ initialSeconds = 120 }) => {
 
   // Мигание и красный цвет при остатке ≤ 30 сек (но > 0) или при клике на кнопку
   const isUrgent = (timeLeft <= 30 && timeLeft > 0) || isBtnClick;
+  const isTimeNoll = timeLeft === 0;
 
   return (
-    <div className={styles.box}>
-      <div
-        className={cn(styles.timer, {
+    <div className={styles.container}>
+      <StarIcon
+        className={cn(styles.icon, {
           [styles.urgent]: isUrgent,
+          [styles.noll]: isTimeNoll,
         })}
-      >
-        {`${minutes}:${seconds}`}
+      />
+      <div className={styles.box}>
+        <div
+          className={cn(styles.timer, {
+            [styles.urgent]: isUrgent,
+            [styles.noll]: isTimeNoll,
+          })}
+        >
+          {`${minutes}:${seconds}`}
+        </div>
       </div>
+      <StarIcon
+        className={cn(styles.icon, {
+          [styles.urgent]: isUrgent,
+          [styles.noll]: isTimeNoll,
+        })}
+      />
     </div>
   );
 };
