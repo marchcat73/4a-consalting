@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'GilroyMedium';
+  src: url('../fonts/GilroyMedium/GilroyMedium.eot');
+  src:
+    url('../fonts/GilroyMedium/GilroyMedium.eot') format('embedded-opentype'),
+    url('../fonts/GilroyMedium/GilroyMedium.woff2') format('woff2'),
+    url('../fonts/GilroyMedium/GilroyMedium.woff') format('woff'),
+    url('../fonts/GilroyMedium/GilroyMedium.ttf') format('truetype'),
+    url('../fonts/GilroyMedium/GilroyMedium.svg#GilroyMedium') format('svg');
+  font-display: swap;
+}
