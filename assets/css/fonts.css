@@ -9,3 +9,111 @@
     url('../fonts/GilroyMedium/GilroyMedium.svg#GilroyMedium') format('svg');
   font-display: swap;
 }
+
+@font-face {
+  font-family: 'MontserratBold';
+  src: url('../fonts/MontserratBold/MontserratBold.eot');
+  src:
+    url('../fonts/MontserratBold/MontserratBold.eot')
+      format('embedded-opentype'),
+    url('../fonts/MontserratBold/MontserratBold.woff2') format('woff2'),
+    url('../fonts/MontserratBold/MontserratBold.woff') format('woff'),
+    url('../fonts/MontserratBold/MontserratBold.ttf') format('truetype'),
+    url('../fonts/MontserratBold/MontserratBold.svg#MontserratBold')
+      format('svg');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MontserratMedium';
+  src: url('../fonts/MontserratMedium/MontserratMedium.eot');
+  src:
+    url('../fonts/MontserratMedium/MontserratMedium.eot')
+      format('embedded-opentype'),
+    url('../fonts/MontserratMedium/MontserratMedium.woff2') format('woff2'),
+    url('../fonts/MontserratMedium/MontserratMedium.woff') format('woff'),
+    url('../fonts/MontserratMedium/MontserratMedium.ttf') format('truetype'),
+    url('../fonts/MontserratMedium/MontserratMedium.svg#MontserratMedium')
+      format('svg');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MontserratRegular';
+  src: url('../fonts/MontserratRegular/MontserratRegular.eot');
+  src:
+    url('../fonts/MontserratRegular/MontserratRegular.eot')
+      format('embedded-opentype'),
+    url('../fonts/MontserratRegular/MontserratRegular.woff2') format('woff2'),
+    url('../fonts/MontserratRegular/MontserratRegular.woff') format('woff'),
+    url('../fonts/MontserratRegular/MontserratRegular.ttf') format('truetype'),
+    url('../fonts/MontserratRegular/MontserratRegular.svg#MontserratRegular')
+      format('svg');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MontserratSemiBold';
+  src: url('../fonts/MontserratSemiBold/MontserratSemiBold.eot');
+  src:
+    url('../fonts/MontserratSemiBold/MontserratSemiBold.eot')
+      format('embedded-opentype'),
+    url('../fonts/MontserratSemiBold/MontserratSemiBold.woff2') format('woff2'),
+    url('../fonts/MontserratSemiBold/MontserratSemiBold.woff') format('woff'),
+    url('../fonts/MontserratSemiBold/MontserratSemiBold.ttf') format('truetype'),
+    url('../fonts/MontserratSemiBold/MontserratSemiBold.svg#MontserratSemiBold')
+      format('svg');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'RalewayBold';
+  src: url('../fonts/RalewayBold/RalewayBold.eot');
+  src:
+    url('../fonts/RalewayBold/RalewayBold.eot') format('embedded-opentype'),
+    url('../fonts/RalewayBold/RalewayBold.woff2') format('woff2'),
+    url('../fonts/RalewayBold/RalewayBold.woff') format('woff'),
+    url('../fonts/RalewayBold/RalewayBold.ttf') format('truetype'),
+    url('../fonts/RalewayBold/RalewayBold.svg#RalewayBold') format('svg');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'RalewayLight';
+  src: url('../fonts/RalewayLight/RalewayLight.eot');
+  src:
+    url('../fonts/RalewayLight/RalewayLight.eot') format('embedded-opentype'),
+    url('../fonts/RalewayLight/RalewayLight.woff2') format('woff2'),
+    url('../fonts/RalewayLight/RalewayLight.woff') format('woff'),
+    url('../fonts/RalewayLight/RalewayLight.ttf') format('truetype'),
+    url('../fonts/RalewayLight/RalewayLight.svg#RalewayLight') format('svg');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'RalewayRegular';
+  src: url('../fonts/RalewayRegular/RalewayRegular.eot');
+  src:
+    url('../fonts/RalewayRegular/RalewayRegular.eot')
+      format('embedded-opentype'),
+    url('../fonts/RalewayRegular/RalewayRegular.woff2') format('woff2'),
+    url('../fonts/RalewayRegular/RalewayRegular.woff') format('woff'),
+    url('../fonts/RalewayRegular/RalewayRegular.ttf') format('truetype'),
+    url('../fonts/RalewayRegular/RalewayRegular.svg#RalewayRegular')
+      format('svg');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'RalewaySemiBold';
+  src: url('../fonts/RalewaySemiBold/RalewaySemiBold.eot');
+  src:
+    url('../fonts/RalewaySemiBold/RalewaySemiBold.eot')
+      format('embedded-opentype'),
+    url('../fonts/RalewaySemiBold/RalewaySemiBold.woff2') format('woff2'),
+    url('../fonts/RalewaySemiBold/RalewaySemiBold.woff') format('woff'),
+    url('../fonts/RalewaySemiBold/RalewaySemiBold.ttf') format('truetype'),
+    url('../fonts/RalewaySemiBold/RalewaySemiBold.svg#RalewaySemiBold')
+      format('svg');
+  font-display: swap;
+}

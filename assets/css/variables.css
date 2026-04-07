@@ -1,8 +1,16 @@
 :root {
-	/* colors */
-	--color-default: #dcdcdc;
-	--color-bg: #232829;
+  /* colors */
+  --color-default: #dcdcdc;
+  --color-bg: #232829;
 
-	/* fonts */
-	--font-default: "MontserratRegular", sans-serif;
+  /* fonts */
+  --font-default: 'MontserratRegular', sans-serif;
+  --font-gilroy-medium: 'GilroyMedium', sans-serif;
+  --font-montserrat-bold: 'MontserratBold', sans-serif;
+  --font-montserrat-medium: 'MontserratMedium', sans-serif;
+  --font-montserrat-semi-bold: 'MontserratSemiBold', sans-serif;
+  --font-raleway-bold: 'RalewayBold', sans-serif;
+  --font-raleway-light: 'RalewayLight', sans-serif;
+  --font-raleway-regular: 'RalewayRegular', sans-serif;
+  --font-raleway-semi-bold: 'RalewaySemiBold', sans-serif;
 }
