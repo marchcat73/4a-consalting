@@ -1,9 +1,9 @@
+import { BaseLayout } from '@/layouts';
+
 export default function Home() {
   return (
-    <div className="">
-      <main className="">
-        <h1>Test</h1>
-      </main>
-    </div>
+    <BaseLayout>
+      <h1>Test</h1>
+    </BaseLayout>
   );
 }

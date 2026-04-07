@@ -13,7 +13,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body
+        className="min-h-full flex flex-col"
+        suppressHydrationWarning={true}
+      >
+        {children}
+      </body>
     </html>
   );
 }

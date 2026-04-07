@@ -1,15 +1,5 @@
 @import './variables.css';
 
-* {
-  margin: 0;
-  box-sizing: border-box;
-
-  &:before,
-  &:after {
-    box-sizing: border-box;
-  }
-}
-
 @media (prefers-reduced-motion: no-preference) {
   :root {
     scroll-behavior: smooth;
