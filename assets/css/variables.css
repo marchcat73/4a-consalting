@@ -1,0 +1,8 @@
+:root {
+	/* colors */
+	--color-default: #dcdcdc;
+	--color-bg: #232829;
+
+	/* fonts */
+	--font-default: "MontserratRegular", sans-serif;
+}
