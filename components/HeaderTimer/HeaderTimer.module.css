@@ -1,0 +1,53 @@
+.box {
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+
+  @media screen and (min-width: 375px) {
+    height: 42px;
+  }
+
+  @media screen and (min-width: 768px) {
+    height: 52px;
+  }
+}
+
+.timer {
+  font-family: var(--font-raleway-bold);
+  font-size: 28px;
+  text-transform: uppercase;
+  color: rgba(255, 187, 0, 1);
+  line-height: 110%;
+  letter-spacing: 0%;
+  transition: color 0.3s ease;
+  width: 72px;
+
+  @media screen and (min-width: 375px) {
+    font-size: 2rem;
+    width: 86px;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 40px;
+    width: 106px;
+  }
+}
+
+.timer {
+  &.urgent {
+    color: rgba(255, 78, 78, 1);
+    animation: blink 1s infinite ease-in-out;
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}

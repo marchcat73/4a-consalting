@@ -1,4 +1,5 @@
 import type { JSX } from 'react';
+import { AppHeader } from '@/components';
 import { BaseLayoutProps } from './BaseLayout.props';
 import styles from './BaseLayout.module.css';
 
@@ -9,7 +10,7 @@ export default function BaseLayout({
   return (
     <>
       <div className={styles.baseLayout} {...props}>
-        <header className={styles.header}>header</header>
+        <AppHeader className={styles.header} />
         <main className={styles.body}>{children}</main>
       </div>
     </>

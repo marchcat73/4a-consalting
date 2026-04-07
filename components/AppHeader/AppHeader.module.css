@@ -1,0 +1,32 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 74px;
+  background: rgba(29, 91, 67, 1);
+  z-index: 9999;
+
+  @media screen and (min-width: 375px) {
+    height: 85px;
+  }
+
+  @media screen and (min-width: 768px) {
+    height: 103px;
+  }
+}
+
+.title {
+  font-family: var(--font-montserrat-semi-bold);
+  font-size: 14px;
+  color: #fff;
+  margin-bottom: 4px !important;
+
+  @media screen and (min-width: 375px) {
+    font-size: 18px;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 24px;
+  }
+}

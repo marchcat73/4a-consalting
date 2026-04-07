@@ -5,24 +5,26 @@ import { persist } from 'zustand/middleware';
 interface IState {
   isOfferta: boolean;
   isBtnClick: boolean;
+  toggleOfferta: () => void;
+  toggleBtnClick: () => void;
 }
 
-const useAppStore = create(
+const useAppStore = create<IState>()(
   persist(
-    (set, _get) => ({
+    (set) => ({
       isOfferta: false,
       isBtnClick: false,
 
       toggleOfferta: () => {
-        set((state: IState) => ({
+        set((state) => ({
+          ...state,
           isOfferta: !state.isOfferta,
-          isBtnClick: state.isBtnClick,
         }));
       },
 
       toggleBtnClick: () => {
-        set((state: IState) => ({
-          isOfferta: state.isOfferta,
+        set((state) => ({
+          ...state,
           isBtnClick: !state.isBtnClick,
         }));
       },
