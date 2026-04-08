@@ -1,9 +1,8 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 'use server';
 import Image from 'next/image';
 import cn from 'classnames';
 import { getTariffs } from '@/app/lib/api';
-import { Tariff } from '@/types';
+import { BestTariff } from '@/components/BestTariff';
 import { HeroProps } from './Hero.props';
 import styles from './Hero.module.css';
 
@@ -40,9 +39,7 @@ const Hero = async ({ className, ...props }: HeroProps) => {
             className="image"
           />
         </div>
-        <div>
-          {tariffs && tariffs.length > 0 && <div>{tariffs.length}</div>}{' '}
-        </div>
+        <div>{bestTariff && <BestTariff bestTariff={bestTariff} />}</div>
       </div>
     </div>
   );

@@ -19,7 +19,6 @@
 .title {
   font-family: var(--font-montserrat-semi-bold);
   font-size: 14px;
-  color: #fff;
   margin-bottom: 4px !important;
 
   @media screen and (min-width: 375px) {

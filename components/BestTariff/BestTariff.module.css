@@ -1,0 +1,35 @@
+.container {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  border: 2px solid var(--color-yellow) !important;
+  border-radius: 20px;
+}
+
+.hit {
+  position: absolute;
+  top: 6px;
+  left: auto;
+  right: 14px;
+  font-family: var(--font-montserrat-medium);
+  color: var(--color-yellow);
+  font-size: 13px;
+  letter-spacing: 3%;
+}
+
+.term {
+  font-family: var(--font-montserrat-medium);
+  line-height: 120%;
+  letter-spacing: 0%;
+}
+
+.price {
+  font-family: var(--font-montserrat-semi-bold);
+  color: var(--color-yellow);
+  line-height: 100%;
+}
+
+.oldPrice {
+  color: var(--color-oldprice);
+}
