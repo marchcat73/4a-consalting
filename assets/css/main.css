@@ -134,3 +134,9 @@ body {
   color: rgba(205, 205, 205, 1);
   cursor: not-allowed;
 }
+.custom-checkbox__icon.custom-checkbox__icon--unchecked {
+  fill: #606566;
+}
+.custom-checkbox__icon.custom-checkbox__icon--unchecked.error {
+  fill: rgba(253, 86, 86, 1);
+}

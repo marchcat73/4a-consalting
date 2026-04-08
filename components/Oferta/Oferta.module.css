@@ -7,4 +7,43 @@
   font-size: 12px;
   line-height: 120%;
   color: rgba(205, 205, 205, 1);
+
+  @media screen and (min-width: 375px) {
+    gap: 12px;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 1rem;
+    line-height: 110%;
+    height: 36px;
+  }
+
+  .label {
+    @media screen and (min-width: 375px) {
+      max-width: 297px;
+    }
+
+    @media screen and (min-width: 768px) {
+      max-width: 605px;
+    }
+  }
+}
+
+.button {
+  height: 55px;
+  font-family: var(--font-montserrat-semi-bold) !important;
+  color: rgba(25, 30, 31, 1) !important;
+  background-color: var(--color-yellow) !important;
+  font-size: 18px;
+  border-radius: 20px !important;
+  cursor: pointer;
+
+  @media screen and (min-width: 375px) {
+    height: 63px;
+  }
+
+  @media screen and (min-width: 768px) {
+    height: 66px;
+    width: 352px;
+  }
 }
