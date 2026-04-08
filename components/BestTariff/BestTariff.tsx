@@ -1,20 +1,23 @@
-'use server';
+'use client';
 import cn from 'classnames';
 import {
   calculateDiscountPercent,
   formatDiscount,
   hasDiscount,
 } from '@/app/lib/discount';
+import { useAppStore } from '@/stores';
 import { Discount } from '@/components';
 import { BestTariffProps } from './BestTariff.props';
 import styles from './BestTariff.module.css';
 
-const BestTariff = async ({
+const BestTariff = ({
   bestTariff,
   isNoBest,
   className,
   ...props
 }: BestTariffProps) => {
+  const isTimer = useAppStore((state) => state.isTimer);
+
   const discountPercent = calculateDiscountPercent(
     bestTariff.full_price,
     bestTariff.price,
@@ -25,13 +28,13 @@ const BestTariff = async ({
     <div
       className={cn(
         styles.container,
-        'pl-5 min-[375px]:pl-7.5 pb-5 pt-5 pr-2.75 min-[375px]:pr-4',
+        'pl-4 min-[375px]:pl-6.5 pb-5 pt-5 pr-2.75 min-[375px]:pr-4',
         { [styles.nobest]: isNoBest },
         className,
       )}
       {...props}
     >
-      {showDiscount && (
+      {!isTimer && showDiscount && (
         <Discount
           percent={formatDiscount(discountPercent)}
           className={!isNoBest ? styles.bestDiscount : ''}
@@ -45,14 +48,11 @@ const BestTariff = async ({
         </div>
       )}
 
-      <div
-        className={cn(
-          'flex flex-col justify-between w-26.75 min-[375px]:w-30.5 md:w-46',
-        )}
-      >
+      <div className={cn('flex flex-col justify-between w-full')}>
         <span
           className={cn(
             styles.term,
+            { [styles.nobest]: isNoBest },
             'mb-3 min-[375px]:text-[18px] md:text-[26px] xl:text-center',
           )}
         >
@@ -62,14 +62,18 @@ const BestTariff = async ({
           className={cn(
             styles.price,
             { [styles.nobest]: isNoBest },
-            'text-[30px] min-[375px]:text-[34px] md:text-[50px]',
+            'text-[30px] min-[375px]:text-[34px] md:text-[50px] w-full',
           )}
         >
-          {bestTariff.price} ₽
+          {!isTimer ? bestTariff.price : bestTariff.full_price} ₽
         </span>
-        <span className={cn(styles.oldPrice, 'flex justify-end line-through')}>
-          {bestTariff.full_price} ₽
-        </span>
+        {!isTimer && (
+          <span
+            className={cn(styles.oldPrice, 'flex justify-end line-through')}
+          >
+            {bestTariff.full_price} ₽
+          </span>
+        )}
       </div>
       <div className={cn(styles.text, 'flex', { [styles.nobest]: isNoBest })}>
         <span className="text-[14px] md:text-[16px]">{bestTariff.text}</span>

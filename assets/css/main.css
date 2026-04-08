@@ -46,3 +46,91 @@ body {
     height: unset !important;
   }
 }
+
+/* Контейнер чекбокса */
+.custom-checkbox {
+  /* display: inline-flex; */
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Визуально скрываем нативный инпут, но оставляем в DOM для доступности */
+.custom-checkbox__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Обёртка для SVG */
+.custom-checkbox__visual {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+/* Общие стили для обоих SVG */
+.custom-checkbox__icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+/* Состояние по умолчанию: показан unchecked, checked скрыт */
+.custom-checkbox__icon--checked {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+/* Переключение при checked */
+.custom-checkbox__input:checked
+  + .custom-checkbox__visual
+  .custom-checkbox__icon--unchecked {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.custom-checkbox__input:checked
+  + .custom-checkbox__visual
+  .custom-checkbox__icon--checked {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Фокус для доступности (только при клавиатурной навигации) */
+.custom-checkbox__input:focus-visible + .custom-checkbox__visual {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Уменьшение анимации для пользователей с предпочтением reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .custom-checkbox__icon {
+    transition: none;
+  }
+}
+
+/* Опционально: стиль для отключённого состояния */
+.custom-checkbox__input:disabled + .custom-checkbox__visual {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.custom-checkbox__input:disabled
+  + .custom-checkbox__visual
+  ~ .custom-checkbox__label {
+  color: rgba(205, 205, 205, 1);
+  cursor: not-allowed;
+}

@@ -1,0 +1,10 @@
+.oferta {
+  display: grid;
+  grid-template-columns: 30px auto;
+  grid-template-rows: 1fr;
+  gap: 10px;
+  height: 42px;
+  font-size: 12px;
+  line-height: 120%;
+  color: rgba(205, 205, 205, 1);
+}

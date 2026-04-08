@@ -3,7 +3,7 @@ import Image from 'next/image';
 import cn from 'classnames';
 import { getTariffs } from '@/app/lib/api';
 import { WarningIcon } from '@/assets/icons';
-import { BestTariff, Tariffs } from '@/components';
+import { BestTariff, Oferta, Tariffs } from '@/components';
 import { HeroProps } from './Hero.props';
 import styles from './Hero.module.css';
 
@@ -67,6 +67,8 @@ const Hero = async ({ className, ...props }: HeroProps) => {
               результат, чем за 1 месяц
             </div>
           </div>
+          <Oferta />
+          <div className="h-100">d</div>
         </div>
       </div>
     </div>

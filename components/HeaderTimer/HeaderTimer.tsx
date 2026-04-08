@@ -8,7 +8,8 @@ import styles from './HeaderTimer.module.css';
 
 const HeaderTimer = ({ initialSeconds = 120, ...props }: HeaderTimerProps) => {
   const [timeLeft, setTimeLeft] = useState(initialSeconds);
-  const isBtnClick = useAppStore((state) => state.isBtnClick);
+
+  const toggleIsTimer = useAppStore((state) => state.toggleIsTimer);
 
   useEffect(() => {
     // Запускаем интервал только один раз при монтировании
@@ -33,8 +34,14 @@ const HeaderTimer = ({ initialSeconds = 120, ...props }: HeaderTimerProps) => {
   const seconds = (timeLeft % 60).toString().padStart(2, '0');
 
   // Мигание и красный цвет при остатке ≤ 30 сек (но > 0) или при клике на кнопку
-  const isUrgent = (timeLeft <= 30 && timeLeft > 0) || isBtnClick;
+  const isUrgent = timeLeft <= 30 && timeLeft > 0;
   const isTimeNoll = timeLeft === 0;
+
+  useEffect(() => {
+    if (timeLeft === 0) {
+      toggleIsTimer();
+    }
+  }, [timeLeft, toggleIsTimer]);
 
   return (
     <div className={styles.container} {...props}>
