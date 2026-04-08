@@ -1,5 +1,11 @@
 'use server';
 import cn from 'classnames';
+import {
+  calculateDiscountPercent,
+  formatDiscount,
+  hasDiscount,
+} from '@/app/lib/discount';
+import { Discount } from '@/components';
 import { BestTariffProps } from './BestTariff.props';
 import styles from './BestTariff.module.css';
 
@@ -8,6 +14,12 @@ const BestTariff = async ({
   className,
   ...props
 }: BestTariffProps) => {
+  const discountPercent = calculateDiscountPercent(
+    bestTariff.full_price,
+    bestTariff.price,
+  );
+  const showDiscount = hasDiscount(bestTariff.full_price, bestTariff.price);
+
   return (
     <div
       className={cn(
@@ -17,6 +29,12 @@ const BestTariff = async ({
       )}
       {...props}
     >
+      {showDiscount && (
+        <Discount
+          percent={formatDiscount(discountPercent)}
+          className={styles.bestDiscount}
+        />
+      )}
       <div className={cn(styles.hit, 'min-[375px]:text-[16px] xl:text-[22px]')}>
         хит!
       </div>

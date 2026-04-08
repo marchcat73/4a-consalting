@@ -1,0 +1,23 @@
+.discount {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -2px;
+  right: 28px;
+  bottom: auto;
+  left: auto;
+  width: 43px;
+  height: 23px;
+  background: rgba(253, 86, 86, 1);
+  border-radius: 0 0 6px 6px;
+  font-family: var(--font-gilroy-medium);
+  font-size: 13px;
+  z-index: 999;
+
+  @media screen and (min-width: 1280px) {
+    width: 66px;
+    height: 39px;
+    border-radius: 0 0 8px 8px;
+  }
+}
