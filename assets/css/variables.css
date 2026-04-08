@@ -2,6 +2,7 @@
   /* colors */
   --color-default: #dcdcdc;
   --color-bg: #232829;
+  --color-yellow: rgba(253, 176, 86, 1);
 
   /* fonts */
   --font-default: 'MontserratRegular', sans-serif;

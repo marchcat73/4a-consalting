@@ -1,9 +1,10 @@
 import { BaseLayout } from '@/layouts';
+import { Hero } from '@/views';
 
 export default function Home() {
   return (
     <BaseLayout>
-      <h1>Test</h1>
+      <Hero className="mx-auto" />
     </BaseLayout>
   );
 }

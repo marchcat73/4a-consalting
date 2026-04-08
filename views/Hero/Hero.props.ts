@@ -1,8 +1,6 @@
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
 
-export interface HeaderTimerProps extends DetailedHTMLProps<
+export interface HeroProps extends DetailedHTMLProps<
   HTMLAttributes<HTMLDivElement>,
   HTMLDivElement
-> {
-  initialSeconds: number;
-}
+> {}

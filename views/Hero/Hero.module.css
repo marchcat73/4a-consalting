@@ -1,0 +1,22 @@
+.title {
+  font-family: var(--font-montserrat-bold);
+  font-size: 22px;
+  line-height: 110%;
+  letter-spacing: 1%;
+  color: #fff;
+}
+
+.highlighted {
+  color: var(--color-yellow);
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto;
+
+  @media (width >= 80rem) {
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr;
+  }
+}

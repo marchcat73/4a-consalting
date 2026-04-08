@@ -3,9 +3,10 @@ import { useState, useEffect } from 'react';
 import cn from 'classnames';
 import { useAppStore } from '@/stores';
 import { StarIcon } from '@/assets/icons';
+import { HeaderTimerProps } from './HeaderTimer.props';
 import styles from './HeaderTimer.module.css';
 
-const HeaderTimer = ({ initialSeconds = 120 }) => {
+const HeaderTimer = ({ initialSeconds = 120, ...props }: HeaderTimerProps) => {
   const [timeLeft, setTimeLeft] = useState(initialSeconds);
   const isBtnClick = useAppStore((state) => state.isBtnClick);
 
@@ -36,7 +37,7 @@ const HeaderTimer = ({ initialSeconds = 120 }) => {
   const isTimeNoll = timeLeft === 0;
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} {...props}>
       <StarIcon
         className={cn(styles.icon, {
           [styles.urgent]: isUrgent,

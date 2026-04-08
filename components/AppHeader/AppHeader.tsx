@@ -8,14 +8,14 @@ const AppHeader = ({ className, ...props }: AppHeaderProps) => {
     <header
       className={cn(
         styles.header,
-        'flex justify-center items-center',
+        'flex justify-center items-center py-2',
         className,
       )}
       {...props}
     >
-      <div className="flex flex-col">
+      <div className="flex flex-col justify-between">
         <div className={cn(styles.title)}>Успейте открыть пробную неделю</div>
-        <HeaderTimer />
+        <HeaderTimer initialSeconds={120} />
       </div>
     </header>
   );

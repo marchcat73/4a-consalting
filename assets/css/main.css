@@ -26,7 +26,22 @@ body {
   font-weight: 400;
   line-height: 130%;
   color: var(--color-default);
-  background-color: var(--color-bg);
+  background-color: #fff;
   background-repeat: no-repeat;
   overflow-x: hidden;
+}
+
+.imageBox {
+  width: 100%;
+
+  > div {
+    position: unset !important;
+  }
+
+  .image {
+    object-fit: contain;
+    width: 100% !important;
+    position: relative !important;
+    height: unset !important;
+  }
 }
