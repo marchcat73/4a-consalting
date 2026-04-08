@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import cn from 'classnames';
 import { getTariffs } from '@/app/lib/api';
+import { WarningIcon } from '@/assets/icons';
 import { BestTariff, Tariffs } from '@/components';
 import { HeroProps } from './Hero.props';
 import styles from './Hero.module.css';
@@ -57,6 +58,15 @@ const Hero = async ({ className, ...props }: HeroProps) => {
               нет данных
             </p>
           )}
+          <div className={cn(styles.sloganBox)}>
+            <div className="flex w-full justify-center">
+              <WarningIcon />
+            </div>
+            <div className="text-xs xl:text-base">
+              Следуя плану на 3 месяца и более, люди получают в 2 раза лучший
+              результат, чем за 1 месяц
+            </div>
+          </div>
         </div>
       </div>
     </div>
