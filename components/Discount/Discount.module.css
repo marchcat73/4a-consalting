@@ -19,5 +19,7 @@
     width: 66px;
     height: 39px;
     border-radius: 0 0 8px 8px;
+    right: auto;
+    left: 51px;
   }
 }

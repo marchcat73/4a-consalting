@@ -5,6 +5,24 @@
   align-items: center;
   border: 2px solid var(--color-yellow) !important;
   border-radius: 20px;
+  background: rgba(49, 54, 55, 1);
+
+  @media screen and (min-width: 1280px) {
+    width: 748px;
+    padding-left: 122px !important;
+  }
+
+  &.nobest {
+    border: 2px solid rgba(72, 77, 78, 1) !important;
+
+    @media screen and (min-width: 1280px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto 62px;
+      padding-left: 18px !important;
+      width: 240px;
+      height: 335px;
+    }
+  }
 }
 
 .hit {
@@ -33,6 +51,14 @@
   font-family: var(--font-montserrat-semi-bold);
   color: var(--color-yellow);
   line-height: 100%;
+
+  &.nobest {
+    color: var(--color-default);
+
+    @media screen and (min-width: 1280px) {
+      text-align: center;
+    }
+  }
 }
 
 .oldPrice {
@@ -49,5 +75,13 @@
   @media screen and (min-width: 768px) {
     right: auto;
     left: 50px;
+  }
+}
+
+.text {
+  &.nobest {
+    @media screen and (min-width: 1280px) {
+      height: 100%;
+    }
   }
 }

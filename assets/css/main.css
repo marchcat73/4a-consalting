@@ -33,6 +33,7 @@ body {
 
 .imageBox {
   width: 100%;
+  position: relative;
 
   > div {
     position: unset !important;

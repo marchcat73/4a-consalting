@@ -6,4 +6,5 @@ export interface BestTariffProps extends DetailedHTMLProps<
   HTMLDivElement
 > {
   bestTariff: Tariff;
+  isNoBest?: boolean;
 }

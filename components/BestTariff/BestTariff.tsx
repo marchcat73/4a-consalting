@@ -11,6 +11,7 @@ import styles from './BestTariff.module.css';
 
 const BestTariff = async ({
   bestTariff,
+  isNoBest,
   className,
   ...props
 }: BestTariffProps) => {
@@ -24,7 +25,8 @@ const BestTariff = async ({
     <div
       className={cn(
         styles.container,
-        'pl-5 min-[375px]:pl-7.5 md:pl-30.5 pb-5 pt-5 pr-2.75 min-[375px]:pr-4',
+        'pl-5 min-[375px]:pl-7.5 pb-5 pt-5 pr-2.75 min-[375px]:pr-4',
+        { [styles.nobest]: isNoBest },
         className,
       )}
       {...props}
@@ -32,12 +34,17 @@ const BestTariff = async ({
       {showDiscount && (
         <Discount
           percent={formatDiscount(discountPercent)}
-          className={styles.bestDiscount}
+          className={!isNoBest ? styles.bestDiscount : ''}
         />
       )}
-      <div className={cn(styles.hit, 'min-[375px]:text-[16px] xl:text-[22px]')}>
-        хит!
-      </div>
+      {!isNoBest && (
+        <div
+          className={cn(styles.hit, 'min-[375px]:text-[16px] xl:text-[22px]')}
+        >
+          хит!
+        </div>
+      )}
+
       <div
         className={cn(
           'flex flex-col justify-between w-26.75 min-[375px]:w-30.5 md:w-46',
@@ -54,6 +61,7 @@ const BestTariff = async ({
         <span
           className={cn(
             styles.price,
+            { [styles.nobest]: isNoBest },
             'text-[30px] min-[375px]:text-[34px] md:text-[50px]',
           )}
         >
@@ -63,7 +71,7 @@ const BestTariff = async ({
           {bestTariff.full_price} ₽
         </span>
       </div>
-      <div>
+      <div className={cn(styles.text, 'flex', { [styles.nobest]: isNoBest })}>
         <span className="text-[14px] md:text-[16px]">{bestTariff.text}</span>
       </div>
     </div>

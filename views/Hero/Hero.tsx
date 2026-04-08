@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import cn from 'classnames';
 import { getTariffs } from '@/app/lib/api';
-import { BestTariff } from '@/components/BestTariff';
+import { BestTariff, Tariffs } from '@/components';
 import { HeroProps } from './Hero.props';
 import styles from './Hero.module.css';
 
@@ -11,7 +11,6 @@ const Hero = async ({ className, ...props }: HeroProps) => {
 
   const bestTariff = tariffs.find((t) => t.is_best);
   const lastTariffs = tariffs.filter((t) => !t.is_best).slice(0, 3);
-  console.info(lastTariffs.length);
 
   return (
     <div className={cn('lg:max-w-304', className)} {...props}>
@@ -34,12 +33,31 @@ const Hero = async ({ className, ...props }: HeroProps) => {
             src="/images/img.png"
             alt="img"
             fill={true}
+            sizes="(max-width: 768px) 100vw"
             quality={100}
             loading="eager"
             className="image"
           />
         </div>
-        <div>{bestTariff && <BestTariff bestTariff={bestTariff} />}</div>
+        <div className="flex flex-col">
+          {bestTariff ? (
+            <BestTariff
+              bestTariff={bestTariff}
+              className={cn('mb-1.5 min-[375px]:mb-2 md:mb-3.5')}
+            />
+          ) : (
+            <p className={cn('mb-1.5 min-[375px]:mb-2 md:mb-3.5')}>
+              нет данных
+            </p>
+          )}
+          {lastTariffs && lastTariffs.length > 0 ? (
+            <Tariffs tariffs={lastTariffs} />
+          ) : (
+            <p className={cn('mb-1.5 min-[375px]:mb-2 md:mb-3.5')}>
+              нет данных
+            </p>
+          )}
+        </div>
       </div>
     </div>
   );
