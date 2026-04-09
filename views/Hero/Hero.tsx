@@ -14,7 +14,13 @@ const Hero = async ({ className, ...props }: HeroProps) => {
   const lastTariffs = tariffs.filter((t) => !t.is_best).slice(0, 3);
 
   return (
-    <div className={cn('lg:max-w-304', className)} {...props}>
+    <div
+      className={cn(
+        'lg:max-w-304 mb-5 min-[375px]:mb-7.5 xl:mb-37.5',
+        className,
+      )}
+      {...props}
+    >
       <h1
         className={cn(
           styles.title,
@@ -68,8 +74,21 @@ const Hero = async ({ className, ...props }: HeroProps) => {
             </div>
           </div>
           <Oferta />
-          <div className="h-100">d</div>
         </div>
+      </div>
+      <div
+        className={cn(
+          styles.garantiyaBox,
+          'flex flex-col mt-5.5 min-[375px]:mt-6 xl:mt-16.5',
+        )}
+      >
+        <div className={cn(styles.garantiaTerm)}>гарантия возврата 30 дней</div>
+        <p className={cn(styles.garantiaTxt, 'mt-2.5 xl:mt-7.5 ')}>
+          Мы уверены, что наш план сработает для тебя и ты увидишь видимые
+          результаты уже через 4 недели! Мы даже готовы полностью вернуть твои
+          деньги в течение 30 дней с момента покупки, если ты не получишь
+          видимых результатов.
+        </p>
       </div>
     </div>
   );

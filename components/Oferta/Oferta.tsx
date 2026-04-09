@@ -39,11 +39,21 @@ const Oferta = ({ className, ...props }: OfertaProps) => {
         </span>
       </label>
       <button
-        className={cn(styles.button, 'flex items-center justify-center')}
+        className={cn(
+          styles.button,
+          'flex items-center justify-center mb-2.5 min-[375px]:mb-5 md:mb-3.5',
+        )}
         onClick={() => setIsClicked(!isClicked)}
       >
         Купить
       </button>
+      <p className={cn(styles.text)}>
+        Нажимая кнопку «Купить», Пользователь соглашается на разовое списание
+        денежных средств для получения пожизненного доступа к приложению.
+        Пользователь соглашается, что данные кредитной/дебетовой карты будут
+        сохранены для осуществления покупок дополнительных услуг сервиса в
+        случае желания пользователя.
+      </p>
     </div>
   );
 };

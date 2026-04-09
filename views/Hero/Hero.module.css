@@ -35,3 +35,56 @@
     padding: 18px 12px 18px 0 !important;
   }
 }
+
+.garantiyaBox {
+  border: 1px solid rgba(72, 77, 78, 1) !important;
+  border-radius: 20px;
+  padding: 12px !important;
+
+  @media (width >= 80rem) {
+    padding: 20px !important;
+  }
+}
+
+.garantiaTerm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(129, 254, 149, 1) !important;
+  border-radius: 30px;
+  background: rgba(45, 50, 51, 1);
+  color: rgba(129, 254, 149, 1);
+  font-family: var(--font-montserrat-medium);
+  line-height: 120%;
+  height: 41px;
+  width: 265px;
+  margin: 0 auto !important;
+
+  @media (width >= 375px) {
+    height: 44px;
+    width: 294px;
+    margin: 0 !important;
+  }
+
+  @media (width >= 80rem) {
+    height: 68px;
+    width: 461px;
+    font-size: 28px;
+  }
+}
+
+.garantiaTxt {
+  font-size: 13px;
+  color: rgba(220, 220, 220, 1);
+  line-height: 130%;
+
+  @media (width >= 375px) {
+    font-size: 14px;
+    line-height: 130%;
+  }
+
+  @media (width >= 80rem) {
+    font-size: 24px;
+    line-height: 130%;
+  }
+}
