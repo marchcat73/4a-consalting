@@ -17,6 +17,7 @@ const BestTariff = ({
   ...props
 }: BestTariffProps) => {
   const isTimer = useAppStore((state) => state.isTimer);
+  const isUrgent = useAppStore((state) => state.isUrgent);
 
   const discountPercent = calculateDiscountPercent(
     bestTariff.full_price,
@@ -61,7 +62,11 @@ const BestTariff = ({
         <span
           className={cn(
             styles.price,
-            { [styles.nobest]: isNoBest },
+            {
+              [styles.nobest]: isNoBest,
+              [styles.urgent]: isUrgent && !isTimer,
+            },
+
             'text-[30px] min-[375px]:text-[34px] md:text-[50px] w-full',
           )}
         >

@@ -5,8 +5,10 @@ import { create } from 'zustand';
 interface IState {
   isOfferta: boolean;
   isTimer: boolean;
+  isUrgent: boolean;
   toggleOfferta: () => void;
   toggleIsTimer: () => void;
+  toggleIsUrgent: () => void;
 }
 
 const useAppStore = create<IState>()(
@@ -14,6 +16,7 @@ const useAppStore = create<IState>()(
   (set) => ({
     isOfferta: false,
     isTimer: false,
+    isUrgent: false,
 
     toggleOfferta: () => {
       set((state) => ({
@@ -26,6 +29,13 @@ const useAppStore = create<IState>()(
       set((state) => ({
         ...state,
         isTimer: !state.isTimer,
+      }));
+    },
+
+    toggleIsUrgent: () => {
+      set((state) => ({
+        ...state,
+        isUrgent: !state.isUrgent,
       }));
     },
   }),

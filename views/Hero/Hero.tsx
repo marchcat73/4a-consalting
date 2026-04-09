@@ -65,7 +65,7 @@ const Hero = async ({ className, ...props }: HeroProps) => {
             </p>
           )}
           <div className={cn(styles.sloganBox)}>
-            <div className="flex w-full justify-center">
+            <div className="flex w-full justify-center pt-1.5">
               <WarningIcon />
             </div>
             <div className="text-xs xl:text-base">

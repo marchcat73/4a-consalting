@@ -10,6 +10,7 @@ const HeaderTimer = ({ initialSeconds = 120, ...props }: HeaderTimerProps) => {
   const [timeLeft, setTimeLeft] = useState(initialSeconds);
 
   const toggleIsTimer = useAppStore((state) => state.toggleIsTimer);
+  const toggleIsUrgent = useAppStore((state) => state.toggleIsUrgent);
 
   useEffect(() => {
     // Запускаем интервал только один раз при монтировании
@@ -42,6 +43,12 @@ const HeaderTimer = ({ initialSeconds = 120, ...props }: HeaderTimerProps) => {
       toggleIsTimer();
     }
   }, [timeLeft, toggleIsTimer]);
+
+  useEffect(() => {
+    if (isUrgent) {
+      toggleIsUrgent();
+    }
+  }, [isUrgent, toggleIsUrgent]);
 
   return (
     <div className={styles.container} {...props}>
