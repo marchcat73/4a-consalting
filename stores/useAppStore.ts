@@ -6,9 +6,11 @@ interface IState {
   isOfferta: boolean;
   isTimer: boolean;
   isUrgent: boolean;
+  isBurn: boolean;
   toggleOfferta: () => void;
   toggleIsTimer: () => void;
   toggleIsUrgent: () => void;
+  toggleIsBurn: () => void;
 }
 
 const useAppStore = create<IState>()(
@@ -17,6 +19,7 @@ const useAppStore = create<IState>()(
     isOfferta: false,
     isTimer: false,
     isUrgent: false,
+    isBurn: false,
 
     toggleOfferta: () => {
       set((state) => ({
@@ -36,6 +39,13 @@ const useAppStore = create<IState>()(
       set((state) => ({
         ...state,
         isUrgent: !state.isUrgent,
+      }));
+    },
+
+    toggleIsBurn: () => {
+      set((state) => ({
+        ...state,
+        isBurn: !state.isBurn,
       }));
     },
   }),

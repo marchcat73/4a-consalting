@@ -11,6 +11,7 @@ const HeaderTimer = ({ initialSeconds = 120, ...props }: HeaderTimerProps) => {
 
   const toggleIsTimer = useAppStore((state) => state.toggleIsTimer);
   const toggleIsUrgent = useAppStore((state) => state.toggleIsUrgent);
+  const toggleIsBurn = useAppStore((state) => state.toggleIsBurn);
 
   useEffect(() => {
     // Запускаем интервал только один раз при монтировании
@@ -37,6 +38,13 @@ const HeaderTimer = ({ initialSeconds = 120, ...props }: HeaderTimerProps) => {
   // Мигание и красный цвет при остатке ≤ 30 сек (но > 0) или при клике на кнопку
   const isUrgent = timeLeft <= 30 && timeLeft > 0;
   const isTimeNoll = timeLeft === 0;
+  const isBurn = timeLeft <= 3 && timeLeft > 0;
+
+  useEffect(() => {
+    if (isBurn) {
+      toggleIsBurn();
+    }
+  }, [isBurn, toggleIsBurn]);
 
   useEffect(() => {
     if (timeLeft === 0) {

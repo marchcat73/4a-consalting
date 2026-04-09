@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 'use client';
 import cn from 'classnames';
 import {
@@ -9,6 +10,7 @@ import { useAppStore } from '@/stores';
 import { Discount } from '@/components';
 import { BestTariffProps } from './BestTariff.props';
 import styles from './BestTariff.module.css';
+import { useEffect, useState } from 'react';
 
 const BestTariff = ({
   bestTariff,
@@ -18,6 +20,7 @@ const BestTariff = ({
 }: BestTariffProps) => {
   const isTimer = useAppStore((state) => state.isTimer);
   const isUrgent = useAppStore((state) => state.isUrgent);
+  const isBurn = useAppStore((state) => state.isBurn);
 
   const discountPercent = calculateDiscountPercent(
     bestTariff.full_price,
@@ -60,11 +63,13 @@ const BestTariff = ({
           {bestTariff.period}
         </span>
         <span
+          key={isUrgent ? 'burn' : 'idle'}
           className={cn(
             styles.price,
             {
               [styles.nobest]: isNoBest,
-              [styles.urgent]: isUrgent && !isTimer,
+              // [styles.urgent]: isUrgent && !isTimer,
+              [styles.burning]: isBurn && !isTimer,
             },
 
             'text-[30px] min-[375px]:text-[34px] md:text-[50px] w-full',
